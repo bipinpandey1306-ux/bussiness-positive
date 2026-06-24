@@ -156,7 +156,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Mobile Number *</FormLabel>
                         <FormControl>
-                          <Input placeholder="+91 9140723680" {...field} />
+                          <Input placeholder="+91**********" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

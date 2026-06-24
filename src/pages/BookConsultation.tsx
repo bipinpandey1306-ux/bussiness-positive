@@ -124,7 +124,7 @@ export default function BookConsultation() {
                       <FormItem>
                         <FormLabel>Phone Number *</FormLabel>
                         <FormControl>
-                          <Input placeholder="+91 9140723680" {...field} />
+                          <Input placeholder="+91**********" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

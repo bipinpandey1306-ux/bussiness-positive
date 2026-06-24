@@ -294,7 +294,7 @@ const defaultCourses: Course[] = [
     duration: "6 Weeks",
     price: 0,
     category: "APIs & Microservices",
-    imageUrl: "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
     isActive: true,
     createdAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString()
   }
@@ -563,7 +563,7 @@ export function useListCourses() {
     queryKey: getListCoursesQueryKey(),
     queryFn: async () => {
       await new Promise(r => setTimeout(r, 300));
-      return getLocalStorage<Course>("bp_courses_v3", defaultCourses);
+      return getLocalStorage<Course>("bp_courses_v4", defaultCourses);
     }
   });
 }
@@ -678,7 +678,7 @@ export function useGetStats(options?: any) {
       await new Promise(r => setTimeout(r, 300));
       const contacts = getLocalStorage<Contact>("bp_contacts", defaultContacts);
       const consultations = getLocalStorage<Consultation>("bp_consultations", defaultConsultations);
-      const courses = getLocalStorage<Course>("bp_courses_v3", defaultCourses);
+      const courses = getLocalStorage<Course>("bp_courses_v4", defaultCourses);
       const blogPosts = getLocalStorage<BlogPost>("bp_blog_posts", defaultBlogPosts);
       const portfolio = getLocalStorage<PortfolioProject>("bp_portfolio", defaultPortfolio);
       const testimonials = getLocalStorage<Testimonial>("bp_testimonials", defaultTestimonials);
@@ -825,9 +825,9 @@ export function useDeleteCourse() {
   return useMutation({
     mutationFn: async (vars: { id: number }) => {
       await new Promise(r => setTimeout(r, 300));
-      let list = getLocalStorage<Course>("bp_courses_v3", defaultCourses);
+      let list = getLocalStorage<Course>("bp_courses_v4", defaultCourses);
       list = list.filter(item => item.id !== vars.id);
-      setLocalStorage("bp_courses_v3", list);
+      setLocalStorage("bp_courses_v4", list);
       return { ok: true };
     },
     onSuccess: () => {
