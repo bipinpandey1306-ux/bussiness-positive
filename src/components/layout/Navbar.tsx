@@ -46,13 +46,13 @@ export function Navbar() {
               </Link>
             </div>
             
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+            <div className="hidden lg:block">
+              <div className="ml-2 xl:ml-10 flex items-baseline lg:space-x-1 xl:space-x-4">
                 {links.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                    className={`rounded-md lg:px-2 xl:px-3 py-2 lg:text-xs xl:text-sm font-medium transition-colors hover:text-primary ${
                       location === link.href
                         ? "text-primary"
                         : "text-muted-foreground"
@@ -65,7 +65,7 @@ export function Navbar() {
                 {/* Promo Link with badge */}
                 <button
                   onClick={() => { setShowPromo(true); setActiveTab("promo"); }}
-                  className="rounded-md px-3 py-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors flex items-center gap-1.5 cursor-pointer relative"
+                  className="rounded-md lg:px-2 xl:px-3 py-2 lg:text-xs xl:text-sm font-semibold text-accent hover:text-accent/80 transition-colors flex items-center gap-1.5 cursor-pointer relative"
                 >
                   <Sparkles className="h-4 w-4 fill-accent animate-bounce" />
                   Latest Offers
@@ -75,16 +75,16 @@ export function Navbar() {
                   </span>
                 </button>
 
-                <Link href="/contact" className="ml-4">
-                  <Button variant="outline" size="sm">Contact</Button>
+                <Link href="/contact" className="lg:ml-2 xl:ml-4">
+                  <Button variant="outline" size="sm" className="lg:min-h-8 lg:h-8 lg:px-2.5 lg:text-[11px] xl:min-h-9 xl:h-9 xl:px-3 xl:text-xs">Contact</Button>
                 </Link>
-                <Link href="/book-consultation" className="ml-2">
-                  <Button size="sm">Book Consultation</Button>
+                <Link href="/book-consultation" className="lg:ml-1 xl:ml-2">
+                  <Button size="sm" className="lg:min-h-8 lg:h-8 lg:px-2.5 lg:text-[11px] xl:min-h-9 xl:h-9 xl:px-3 xl:text-xs">Book Consultation</Button>
                 </Link>
               </div>
             </div>
             
-            <div className="-mr-2 flex md:hidden">
+            <div className="-mr-2 flex lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
@@ -97,7 +97,7 @@ export function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3 bg-background border-b">
               {links.map((link) => (
                 <Link
