@@ -11,6 +11,8 @@ export interface Service {
   description: string;
   iconName?: string | null;
   isActive: boolean;
+  features?: string[];
+  tagline?: string | null;
 }
 
 export interface ServiceInput {
@@ -216,51 +218,90 @@ export interface DashboardStats {
 const defaultServices: Service[] = [
   {
     id: 1,
-    name: "Software & Web Development",
-    category: "Development",
-    description: "We build highly performant, feature-rich web and mobile applications using React, Next.js, and Node.js. Tailored to your exact business specifications with strict attention to performance and security.",
-    iconName: "Code",
-    isActive: true
+    name: "BillBaaz AI Smart Billing & Retail Intelligence",
+    category: "Products",
+    description: "An AI-powered smart billing and retail management intelligence system designed for modern retailers. A Business Positive Product.",
+    tagline: "A Business Positive Product",
+    iconName: "Cpu",
+    isActive: true,
+    features: [
+      "GST Billing",
+      "Inventory Management",
+      "Customer Management",
+      "AI Business Insights",
+      "Retail Management",
+      "Sales Analytics",
+      "Cloud Access"
+    ]
   },
   {
     id: 2,
-    name: "IT Strategy & Consulting",
-    category: "Consulting",
-    description: "Align your technology roadmap with business outcomes. We perform architecture audits, design scalable database schemas, and establish modern DevOps pipelines.",
-    iconName: "Briefcase",
-    isActive: true
+    name: "Digital Marketing Services",
+    category: "Digital Marketing",
+    description: "Boost your brand presence, generate high-quality leads, and run targeted campaigns across channels.",
+    tagline: "One Stop Solution for Business Growth",
+    iconName: "TrendingUp",
+    isActive: true,
+    features: [
+      "Meta Ads (Facebook & Instagram)",
+      "Google Ads",
+      "Lead Generation",
+      "SEO (Search Engine Optimization)",
+      "Social Media Management",
+      "WhatsApp Marketing",
+      "Email Marketing",
+      "Influencer Marketing",
+      "Brand Promotion",
+      "OTT Ads",
+      "Spotify Ads"
+    ]
   },
   {
     id: 3,
-    name: "Cloud Solutions & DevOps",
-    category: "Cloud",
-    description: "Implement robust cloud infrastructure (AWS/GCP/Azure) with automated continuous integration and continuous deployment pipelines for zero-downtime releases.",
-    iconName: "Cloud",
-    isActive: true
+    name: "Technology Services",
+    category: "Technology",
+    description: "Scalable, high-performance web, mobile, and software development solutions to automate and digitize your business operations.",
+    tagline: "One Stop Solution for Business Growth",
+    iconName: "Code",
+    isActive: true,
+    features: [
+      "Website Development",
+      "Landing Page Design",
+      "Mobile App Development",
+      "Business Software Development",
+      "CRM Solutions",
+      "Automation Solutions"
+    ]
   },
   {
     id: 4,
-    name: "Digital Marketing & Brand Growth",
-    category: "Marketing",
-    description: "Maximize user acquisition and retention with data-driven SEO, Google Ads, and targeted social media marketing campaigns.",
-    iconName: "TrendingUp",
-    isActive: true
+    name: "Business Services",
+    category: "Business Compliance",
+    description: "End-to-end registrations, tax filings, financial support, and backend telecalling / BPO solutions for smooth operations.",
+    tagline: "One Stop Solution for Business Growth",
+    iconName: "Briefcase",
+    isActive: true,
+    features: [
+      "GST Registration",
+      "ITR Filing",
+      "MSME Registration",
+      "Business Loan Assistance",
+      "Telecalling Services",
+      "BPO Solutions"
+    ]
   },
   {
     id: 5,
-    name: "Corporate Tech Training",
-    category: "Training",
-    description: "Upskill your engineering and design team. We offer customized bootcamps covering modern React, TypeScript, Node.js, and cloud engineering best practices.",
+    name: "Professional Courses",
+    category: "Professional Courses",
+    description: "Hands-on, industry-ready certified training programs to accelerate your professional growth.",
+    tagline: "Upskill & Certify",
     iconName: "BookOpen",
-    isActive: true
-  },
-  {
-    id: 6,
-    name: "UI/UX Product Design",
-    category: "Design",
-    description: "Establish high-fidelity designs, rapid interactive prototypes, and modern user-centric interfaces designed for peak conversion and engagement.",
-    iconName: "Layout",
-    isActive: true
+    isActive: true,
+    features: [
+      "🔥 Digital Marketing Course: Live Projects, Practical Training, Certification, 3 Month Bootcamp",
+      "🔥 Python Programming Course: Beginner to Advanced, Weekend Batch, Real Projects, Certification"
+    ]
   }
 ];
 
@@ -553,7 +594,7 @@ export function useListServices() {
     queryKey: getListServicesQueryKey(),
     queryFn: async () => {
       await new Promise(r => setTimeout(r, 300));
-      return getLocalStorage<Service>("bp_services", defaultServices);
+      return getLocalStorage<Service>("bp_services_v2", defaultServices);
     }
   });
 }
@@ -808,9 +849,9 @@ export function useDeleteService() {
   return useMutation({
     mutationFn: async (vars: { id: number }) => {
       await new Promise(r => setTimeout(r, 300));
-      let list = getLocalStorage<Service>("bp_services", defaultServices);
+      let list = getLocalStorage<Service>("bp_services_v2", defaultServices);
       list = list.filter(item => item.id !== vars.id);
-      setLocalStorage("bp_services", list);
+      setLocalStorage("bp_services_v2", list);
       return { ok: true };
     },
     onSuccess: () => {
