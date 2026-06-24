@@ -23,7 +23,7 @@ export default function Services() {
 
   return (
     <MainLayout>
-      <div className="bg-primary/5 py-20 relative overflow-hidden">
+      <div className="bg-primary/5 py-12 md:py-20 relative overflow-hidden">
         {/* Decorative background shapes for premium look */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] rounded-full bg-primary blur-3xl" />
@@ -34,25 +34,25 @@ export default function Services() {
           <Badge variant="outline" className="mb-4 text-xs font-semibold px-3 py-1 text-primary border-primary bg-primary/5">
             ONE STOP SOLUTION FOR BUSINESS GROWTH
           </Badge>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6 text-foreground">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6 text-foreground">
             Our Services & Solutions
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
             From smart products and custom software development to advanced digital marketing, compliance, and professional training.
           </p>
         </div>
       </div>
 
-      <div className="py-20 container mx-auto px-4">
+      <div className="py-12 md:py-20 container mx-auto px-4">
         {/* Why Choose Us Header section for value props */}
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground mb-4">Why Choose Business Positive?</h2>
+        <div className="mb-10 md:mb-16 text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4">Why Choose Business Positive?</h2>
           <p className="text-muted-foreground text-sm leading-relaxed">
             We deliver result-oriented business acceleration solutions. Our products and services are geared for peak performance, scale, and customer satisfaction.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {isLoading ? (
             Array.from({ length: 5 }).map((_, i) => (
               <Skeleton key={i} className="h-96 w-full rounded-xl" />
@@ -60,7 +60,7 @@ export default function Services() {
           ) : services?.filter(s => s.isActive).map((service) => (
             <div 
               key={service.id} 
-              className="rounded-xl border bg-card p-8 shadow-sm flex flex-col transition-all duration-300 hover:shadow-md hover:border-primary/30 hover:-translate-y-1 cursor-pointer group"
+              className="rounded-xl border bg-card p-6 md:p-8 shadow-sm flex flex-col transition-all duration-300 hover:shadow-md hover:border-primary/30 hover:-translate-y-1 cursor-pointer group"
               onClick={() => setSelectedService(service)}
             >
               <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -119,7 +119,7 @@ export default function Services() {
 
       {/* Expandable Details Dialog */}
       <Dialog open={!!selectedService} onOpenChange={(open) => { if(!open) setSelectedService(null); }}>
-        <DialogContent className="sm:max-w-[550px] max-h-[85vh] overflow-y-auto">
+        <DialogContent className="w-[calc(100%-2rem)] max-w-[95vw] sm:max-w-[550px] max-h-[90vh] overflow-y-auto">
           {selectedService && (
             <>
               <DialogHeader>
