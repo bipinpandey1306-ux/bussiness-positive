@@ -73,11 +73,11 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Services</h3>
             <ul className="mt-4 space-y-2 text-sm text-secondary-foreground/80">
+              <li><Link href="/services" className="hover:text-white">BillBaaz AI Billing</Link></li>
               <li><Link href="/services" className="hover:text-white">Digital Marketing</Link></li>
-              <li><Link href="/services" className="hover:text-white">Web Development</Link></li>
-              <li><Link href="/services" className="hover:text-white">Mobile Apps</Link></li>
-              <li><Link href="/services" className="hover:text-white">Software Development</Link></li>
-              <li><Link href="/services" className="hover:text-white">Python Training</Link></li>
+              <li><Link href="/services" className="hover:text-white">Technology Services</Link></li>
+              <li><Link href="/services" className="hover:text-white">Business Services</Link></li>
+              <li><Link href="/services" className="hover:text-white">Professional Courses</Link></li>
             </ul>
           </div>
           
