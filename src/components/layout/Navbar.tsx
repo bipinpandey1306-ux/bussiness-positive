@@ -31,7 +31,8 @@ export function Navbar() {
         onClick={() => { setShowPromo(true); setActiveTab("promo"); }}
       >
         <Flame className="h-4 w-4 text-accent animate-pulse fill-accent" />
-        <span>LIMITED TIME OFFER: FLAT 10% OFF ON ALL SERVICES & SPECIAL PYTHON / DIGITAL MARKETING BATCHES</span>
+        <span className="hidden sm:inline">LIMITED TIME OFFER: FLAT 10% OFF ON ALL SERVICES & SPECIAL PYTHON / DIGITAL MARKETING BATCHES</span>
+        <span className="sm:hidden">FLAT 10% OFF ON ALL SERVICES & TRAINING BATCHES!</span>
         <Megaphone className="h-3.5 w-3.5 ml-1 hidden sm:inline" />
       </div>
 

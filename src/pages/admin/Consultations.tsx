@@ -15,7 +15,7 @@ export default function Consultations() {
         <p className="text-muted-foreground mt-1">Manage consultation requests</p>
       </div>
 
-      <div className="rounded-md border bg-card overflow-hidden">
+      <div className="rounded-md border bg-card overflow-x-auto">
         <Table>
           <TableHeader>
             <TableRow>

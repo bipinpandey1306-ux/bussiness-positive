@@ -64,7 +64,7 @@ export default function Contacts() {
         </div>
       </div>
 
-      <div className="rounded-md border bg-card overflow-hidden">
+      <div className="rounded-md border bg-card overflow-x-auto">
         <Table>
           <TableHeader>
             <TableRow>

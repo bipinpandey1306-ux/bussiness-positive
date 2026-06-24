@@ -37,7 +37,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="bg-accent/10 rounded-3xl p-12 text-center">
+        <div className="bg-accent/10 rounded-3xl p-6 sm:p-12 text-center">
           <h2 className="text-3xl font-bold mb-10">Our Impact</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
