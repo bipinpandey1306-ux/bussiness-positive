@@ -98,13 +98,18 @@ export function Footer() {
                 <MapPin className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
                 <span>Level 2, Tech Park, Startup Hub, India</span>
               </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
-                <span>+91 91407 23680, +91 70545 18766</span>
+              <li className="flex items-start">
+                <Phone className="h-5 w-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+919140723680" className="hover:text-white transition-colors">+91 91407 23680</a>
+                  <a href="tel:+917054518766" className="hover:text-white transition-colors">+91 70545 18766</a>
+                </div>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
-                <span>vishwjeet@businesspositive.in</span>
+                <a href="mailto:vishwjeet@businesspositive.in" className="hover:text-white transition-colors">
+                  vishwjeet@businesspositive.in
+                </a>
               </li>
             </ul>
             

@@ -99,7 +99,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Phone</h3>
-                  <p className="text-muted-foreground mt-1">+91 91407 23680, +91 70545 18766<br />Mon-Fri from 9am to 6pm</p>
+                  <p className="text-muted-foreground mt-1">
+                    <a href="tel:+919140723680" className="hover:text-primary transition-colors">+91 91407 23680</a>,{" "}
+                    <a href="tel:+917054518766" className="hover:text-primary transition-colors">+91 70545 18766</a>
+                    <br />
+                    Mon-Fri from 9am to 6pm
+                  </p>
                 </div>
               </div>
               
@@ -109,7 +114,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Email</h3>
-                  <p className="text-muted-foreground mt-1">vishwjeet@businesspositive.in</p>
+                  <p className="text-muted-foreground mt-1">
+                    <a href="mailto:vishwjeet@businesspositive.in" className="hover:text-primary transition-colors">
+                      vishwjeet@businesspositive.in
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
